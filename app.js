@@ -1,20 +1,14 @@
 const express = require('express');
 const path = require('path');
-const CouchDB = require('node-couchdb');
 const password = require('./config.js');
 const axios = require('axios');
+const db = require('./db.js');
 
 const port = 3000;
 
-// move to a seperate db file
-const couch = new CouchDB({
-  auth: {
-    user: 'admin',
-    password: password
-  }
-})
 
-couch.listDatabases()
+
+db.listDatabases()
   .then((dbs) => {
     console.log(dbs);
   })
