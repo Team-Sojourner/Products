@@ -2,16 +2,15 @@ const express = require('express');
 const path = require('path');
 const password = require('./config.js');
 const axios = require('axios');
-const db = require('./db.js');
+// const db = require('./db.js');
+const example = require('./example.js');
+const cleaningFuncs = require('./csvCleaner.js');
+
+console.log(cleaningFuncs.cleaner);
 
 const port = 3000;
 
-
-
-db.listDatabases()
-  .then((dbs) => {
-    console.log(dbs);
-  })
+// mongo import
 
 const app = express();
 

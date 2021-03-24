@@ -3,3 +3,12 @@ config.js
 
 # modules
 node_modules/
+
+# example data
+example.js
+
+
+# csv files
+csvFiles/
+photos.csv
+samplePhotos.csv
