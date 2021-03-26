@@ -8,7 +8,7 @@ const style = {
   id: Number,
   productId: Number,
   name: String,
-  sale_price: Number,
+  sale_price: mongoose.Mixed,
   original_price: Number,
   default_style: Number
 };
@@ -20,6 +20,7 @@ const stream = fs.createReadStream('../csvFiles/styles.csv', {start: 0, highWate
 
 
 stream.on('data', (chunk) => {
+
 
   Style.create({
     id: chunk.id,

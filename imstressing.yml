@@ -1,0 +1,17 @@
+config:
+  target: 'http://localhost:3000'
+  http:
+    timeout: 10 # Responses have to be sent within 10 seconds or the request will be aborted
+
+  phases:
+    # Create 100 virtual users every second for 60 seconds
+    - duration: 60 # seconds
+      arrivalRate: 250 # virtual users
+
+scenarios:
+  - name: 'Get Products'
+    flow:
+      - get:
+          url: '/products/5/styles'
+          expect:
+            - statusCode: 200
